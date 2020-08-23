@@ -5,21 +5,20 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Setup Project
 
-* System dependencies
+* Clone Project (https://github.com/shikhapandey30/demo_shop.git)
 
-* Configuration
+* bundle install
 
-* Database creation
+* rake db:migrate
 
-* Database initialization
+* rake db:migrate
 
-* How to run the test suite
+* rake db:seed
 
-* Services (job queues, cache servers, search engines, etc.)
+* Admin Credentials (localhost:3000/admin, email: admin@example.com, password: password)
 
-* Deployment instructions
 
 * ...
 # demo_shop
