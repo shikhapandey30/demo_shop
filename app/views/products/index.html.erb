@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+<%= image_tag "/banner.png", style: 'width:100vw;margin-bottom:20px;' %>
+<br/><br/>
+<div class="container">
+  <h4>In the Spotlight</h4>
+
+  <div class="container">
+    <div class="row">
+      <% @products.each do |product| %>
+        <div class="col-md-3 col-sm-6">
+          <div class="product-grid">
+            <div class="product-image">
+              <a href="#"><% if product.image.present? %>
+                <img src="<%= product.image %>" style="width: 100%" title="" alt=""/>
+                <% else %>
+                 <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-1.jpg">
+                  <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-2.jpg">
+                <% end %>
+              </a>
+              <ul class="social">
+                <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+              </ul>
+              <!-- <span class="product-new-label">Sale</span> -->
+              <span class="product-discount-label">UP TO <%= product.discount_percentage.to_i %>% OFF</span>
+            </div>
+            <ul class="rating">
+              <li class="fa fa-star"></li>
+              <li class="fa fa-star"></li>
+              <li class="fa fa-star"></li>
+              <li class="fa fa-star"></li>
+              <li class="fa fa-star disable"></li>
+            </ul>
+            <div class="product-content">
+              <h3 class="title"><a href="#"><%= product.name %></a></h3>
+              <div class="price">₹<%= product.display_price %>
+                <span>
+                  <% if product.full_price.to_f > 0 %>
+                    <del> ₹<%= product.display_full_price %></del>
+                  <% end %>
+                </span>
+              </div>
+              <a class="add-to-cart" href="">+ Add To Cart</a>
+            </div>
+          </div><br/>
+        </div>
+      <% end %>  
+    </div>
+  </div>
+  <hr>
+</div>
+ 
